@@ -22,8 +22,8 @@ btnAdd.addEventListener('click',()=>{
                         <li>
                             ${element}
                             <div class="btns">
-                                <button class="edit" value="">Modifier</button>
-                                <button class="delete" value="">Delete</button>
+                                <button class="edit" value=""><i class="fa-solid fa-pen-to-square"  style="color: #3d3540;"></i></button>
+                                <button class="delete" value=""><i class="fa-solid fa-trash" style="color: #3d3540;"></i></button>
                             </div>
                         </li>
     `
@@ -53,9 +53,6 @@ function modifierElement(id){
             btnEdits[key].addEventListener('click', function(){
                 btnAdd.style.display = "none"
                 btnEdit.style.display = "inline"
-                // let textLi = btnEdits[key].closest('li').childNodes[0]
-                // inputText.value = textLi.nodeValue
-                // console.log(textLi.nodeValue)
                 for(t in id){
                     if( key == t){
                         inputText.value = id[t]
@@ -63,9 +60,9 @@ function modifierElement(id){
                 }
                 btnEdit.addEventListener('click', function(){
                     btnEdits[key].closest('li').childNodes[0].nodeValue = inputText.value
+                    id[key] = inputText.value
                     btnAdd.style.display = "inline"
                     btnEdit.style.display = "none"
-                    inputText.value = ""
                 })
                 
             })
