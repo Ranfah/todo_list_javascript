@@ -60,7 +60,7 @@ function modifierElement(id){
                 }
                 btnEdit.addEventListener('click', function(){
                     btnEdits[key].closest('li').childNodes[0].nodeValue = inputText.value
-                    id[key] = inputText.value
+                    id[t] = inputText.value
                     btnAdd.style.display = "inline"
                     btnEdit.style.display = "none"
                 })
